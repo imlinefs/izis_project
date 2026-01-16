@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Izis - Serviços</title>
+</head>
+<body>
+    <h1>Nossos Serviços</h1>
+    
+    <ul>
+        {% for service in services %}
+            <li>
+                <strong>{{ service.name }}</strong> - R$ {{ service.price }}
+                <br>
+                <small>Tempo: {{ service.duration_minutes }} min</small>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
