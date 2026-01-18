@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Izis - Minhas Clientes</title>
+</head>
+<body>
+    <h1>Carteira de Clientes</h1>
+    <a href="/">Voltar</a>
+    <hr>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Último Procedimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+            <tr>
+                <td>{{ client.nome }}</td>
+                <td>{{ client.telefone }}</td>
+                <td>
+                    {% if client.data_ultimo_procedimento %}
+                        {{ client.data_ultimo_procedimento|date:"d/m/Y" }}
+                    {% else %}
+                        <span style="color: red;">Nunca realizou</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

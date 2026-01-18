@@ -18,8 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from services.views import service_list # Importando a service_list
+from clients.views import client_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('servicos/', service_list, name='service_list'), # Adicionando a rota
+    path('clientes/', client_list, name='client_list'),
 ]
